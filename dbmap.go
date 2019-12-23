@@ -3,7 +3,7 @@
 // and centralize database use to ease profiling and reporting.
 //
 // It is a fork of the wonderful github.com/coopernurse/gorp package, but is
-// rewritten to use github.com/jmoiron/sqlx as a base.
+// rewritten to use github.com/frankee/sqlx as a base.
 //
 // Use of this source code is governed by a MIT-style license that can be
 // found in the LICENSE file.
@@ -18,8 +18,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/jmoiron/sqlx"
-	"github.com/jmoiron/sqlx/reflectx"
+	"github.com/frankee/sqlx"
+	"github.com/frankee/sqlx/reflectx"
 )
 
 // TableNameMapper is the function used by AddTable to map struct names to database table names, in analogy

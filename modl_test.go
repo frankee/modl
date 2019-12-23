@@ -936,19 +936,19 @@ func newDbMap() *DbMap {
 }
 
 func connect(driver string) *sql.DB {
-	dsn := os.Getenv("MODL_TEST_DSN")
-	if dsn == "" {
-		panic("MODL_TEST_DSN env variable is not set. Please see README.md")
-	}
+	//dsn := os.Getenv("MODL_TEST_DSN")
+	//if dsn == "" {
+	//	panic("MODL_TEST_DSN env variable is not set. Please see README.md")
+	//}
 
-	db, err := sql.Open(driver, dsn)
+	db, err := sql.Open(driver, "user=postgres password=postgres dbname=frankee sslmode=disable")
 	if err != nil {
 		panic("Error connecting to db: " + err.Error())
 	}
 	err = db.Ping()
-	if err != nil {
-		panic("Error connecting to db: " + err.Error())
-	}
+	//if err != nil {
+	//	panic("Error connecting to db: " + err.Error())
+	//}
 	return db
 }
 
@@ -961,7 +961,10 @@ func dialectAndDriver() (Dialect, string) {
 	case "sqlite":
 		return SqliteDialect{}, "sqlite3"
 	}
-	panic("MODL_TEST_DIALECT env variable is not set or is invalid. Please see README.md")
+	return PostgresDialect{}, "postgres"
+	//return MySQLDialect{"InnoDB", "UTF8"}, "mysql"
+	//return SqliteDialect{}, "sqlite3"
+	//panic("MODL_TEST_DIALECT env variable is not set or is invalid. Please see README.md")
 }
 
 func _insert(dbmap *DbMap, list ...interface{}) {

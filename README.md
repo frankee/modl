@@ -14,7 +14,7 @@ As Gorp's behavior moves on, Modl may adopt some of it or may not.
 
 Modl's goal is to clean up bits of gorp's API, add some additional features
 like query building helpers and additional control over SQL generation, and
-to reuse lower level abstractions provided in [sqlx](http://github.com/jmoiron/sqlx).
+to reuse lower level abstractions provided in [sqlx](http://github.com/frankee/sqlx).
 The driving philosophies behind modl are:
 
 * If something can be done in `database/sql`, do it that way

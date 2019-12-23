@@ -3,7 +3,7 @@ package modl
 import (
 	"database/sql"
 
-	"github.com/jmoiron/sqlx"
+	"github.com/frankee/sqlx"
 )
 
 // Transaction represents a database transaction.
